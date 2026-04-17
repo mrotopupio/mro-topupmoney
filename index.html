@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>MRO FREYA</title>
+<title>MRO FREYA CASINO</title>
 
 <style>
 *{
@@ -19,59 +19,70 @@ body{
     overflow:hidden;
 }
 
+/* Overlay */
 .overlay{
     width:100%;
     min-height:100vh;
-    background:rgba(0,0,0,.78);
+    background:rgba(0,0,0,.75);
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:20px;
     position:relative;
 }
 
-.overlay::before{
-    content:"";
+/* วิบวับ */
+.sparkle{
     position:absolute;
-    inset:0;
-    background:radial-gradient(circle,rgba(255,215,0,.12),transparent 60%);
-    animation:pulse 3s infinite;
+    width:6px;
+    height:6px;
+    background:#ffd700;
+    border-radius:50%;
+    animation:twinkle 3s infinite;
+    opacity:.8;
 }
 
+/* กล่องหลัก */
 .box{
     position:relative;
     z-index:2;
     text-align:center;
     max-width:520px;
-    width:100%;
+    width:90%;
+    padding:30px;
+    border-radius:25px;
+    background:rgba(20,20,20,.55);
+    backdrop-filter:blur(8px);
+    box-shadow:0 0 35px rgba(255,215,0,.35);
     animation:fadeIn 1s ease;
 }
 
+/* โลโก้ */
 .logo{
-    width:200px;
-    height:200px;
+    width:190px;
+    height:190px;
+    border-radius:25px;
     object-fit:cover;
-    border-radius:30px;
-    box-shadow:0 0 45px rgba(255,215,0,1);
-    margin-bottom:20px;
+    box-shadow:0 0 35px gold;
     animation:float 2.5s ease-in-out infinite;
+    margin-bottom:20px;
 }
 
+/* ข้อความ */
 .title{
     font-size:54px;
     font-weight:bold;
     color:#ffd700;
-    text-shadow:0 0 25px #ffd700;
-    margin-bottom:12px;
+    text-shadow:0 0 20px gold;
+    margin-bottom:10px;
 }
 
 .sub{
-    font-size:19px;
     color:#fff;
-    margin-bottom:35px;
-    opacity:.95;
+    font-size:18px;
+    margin-bottom:30px;
 }
 
+/* ปุ่ม */
 .btn{
     display:inline-block;
     padding:20px 60px;
@@ -79,10 +90,10 @@ body{
     font-weight:bold;
     color:#111;
     text-decoration:none;
-    border-radius:20px;
+    border-radius:18px;
     background:linear-gradient(90deg,#ffd700,#ff9900);
-    box-shadow:0 0 35px rgba(255,200,0,1);
-    transition:.25s;
+    box-shadow:0 0 30px rgba(255,215,0,.9);
+    transition:.2s;
     animation:glow 1.5s infinite alternate;
 }
 
@@ -91,12 +102,12 @@ body{
 }
 
 .footer{
-    margin-top:28px;
-    color:#bbb;
+    margin-top:25px;
+    color:#ccc;
     font-size:14px;
 }
 
-/* เอฟเฟกต์ */
+/* Animation */
 @keyframes fadeIn{
     from{opacity:0;transform:translateY(20px);}
     to{opacity:1;transform:translateY(0);}
@@ -108,20 +119,20 @@ body{
 }
 
 @keyframes glow{
-    from{box-shadow:0 0 20px rgba(255,200,0,.7);}
-    to{box-shadow:0 0 45px rgba(255,200,0,1);}
+    from{box-shadow:0 0 20px rgba(255,215,0,.6);}
+    to{box-shadow:0 0 45px rgba(255,215,0,1);}
 }
 
-@keyframes pulse{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.1);}
-    100%{transform:scale(1);}
+@keyframes twinkle{
+    0%{transform:translateY(0) scale(1);opacity:.2;}
+    50%{opacity:1;}
+    100%{transform:translateY(-100px) scale(1.5);opacity:0;}
 }
 
 @media(max-width:600px){
-    .logo{width:170px;height:170px;}
+    .logo{width:150px;height:150px;}
     .title{font-size:42px;}
-    .btn{font-size:24px;padding:18px 42px;}
+    .btn{font-size:24px;padding:16px 42px;}
 }
 </style>
 </head>
@@ -129,6 +140,13 @@ body{
 <body>
 
 <div class="overlay">
+
+    <!-- ดาววิบวับ -->
+    <div class="sparkle" style="left:10%;bottom:10%;animation-delay:0s;"></div>
+    <div class="sparkle" style="left:25%;bottom:20%;animation-delay:1s;"></div>
+    <div class="sparkle" style="left:70%;bottom:15%;animation-delay:2s;"></div>
+    <div class="sparkle" style="left:85%;bottom:30%;animation-delay:.5s;"></div>
+
     <div class="box">
 
         <img src="logo.png" class="logo">
@@ -139,14 +157,25 @@ body{
             ระบบเติมเงินอัตโนมัติ รวดเร็ว ปลอดภัย 24 ชั่วโมง
         </div>
 
-        <a href="topup.html" class="btn">💰 เติมเงินเลย</a>
+        <a href="topup.html" class="btn" onclick="playSound()">💰 เติมเงินเลย</a>
 
         <div class="footer">
-            © 2026 MRO FREYA TOPUP SYSTEM
+            © 2026 MRO FREYA CASINO UI
         </div>
 
     </div>
 </div>
+
+<!-- เสียง -->
+<audio id="clickSound">
+    <source src="click.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playSound(){
+    document.getElementById("clickSound").play();
+}
+</script>
 
 </body>
 </html>
