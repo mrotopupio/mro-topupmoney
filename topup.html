@@ -2,29 +2,27 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>เติมเงิน</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="topup-box">
+    <h2>💸 เติมเงิน</h2>
 
-    <h1>💰 เติมเงิน</h1>
-    <p class="sub">ระบบเติมเงินอัตโนมัติ ปลอดภัย 24 ชม.</p>
+    <form action="https://mro-topupmoney.rf.gd/upload.php" method="POST" enctype="multipart/form-data">
+        
+        <input type="text" name="username" placeholder="👤 Username" required>
 
-    <input type="text" id="username" placeholder="👤 Username">
-    <input type="number" id="amount" placeholder="💸 จำนวนเงิน">
+        <input type="number" name="amount" placeholder="💰 จำนวนเงิน" required>
 
-    <button onclick="generateQR()" class="btn-main">
-        ⚡ สร้าง QR
-    </button>
+        <input type="file" name="slip" accept="image/*" required>
 
-    <div id="qrBox"></div>
+        <button type="submit">📤 อัปโหลดสลิป</button>
+
+    </form>
 
 </div>
 
-<script src="script.js"></script>
 </body>
 </html>
