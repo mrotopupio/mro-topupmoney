@@ -20,28 +20,38 @@ function generateQR() {
     document.getElementById('qrBox').innerHTML = `
         <div class="qr-card">
 
-            <img src="${qrUrl}" class="qr-img" id="qrImage">
+            <img src="${qrUrl}" class="qr-img">
 
             <p class="pay-text">📱 สแกนเพื่อจ่าย ${amount} บาท</p>
             <p class="user-text">👤 Username: ${username}</p>
             <p class="bank-text">🏦 ${accountName}</p>
 
-            <a href="${qrUrl}" download="QR-${amount}.png" class="copy-btn">
+            <a href="${qrUrl}" download="qr.png" class="copy-btn">
                 💾 บันทึก QR Code
             </a>
 
-            <button class="copy-btn" onclick="paymentSuccess()">
-                ✅ ฉันโอนแล้ว
+            <input type="file" id="slipFile" accept="image/*" style="margin-top:15px;">
+
+            <button class="copy-btn" onclick="submitSlip()">
+                ✅ โอนแล้ว
             </button>
 
         </div>
     `;
 }
 
-function paymentSuccess() {
+function submitSlip() {
+
+    let file = document.getElementById("slipFile").files[0];
+
+    if (!file) {
+        alert("กรุณาแนบสลิปก่อน");
+        return;
+    }
+
     document.getElementById("qrBox").innerHTML = `
         <div class="qr-card">
-            <h2 style="color:#00ff99;">✅ โอนเงินสำเร็จ</h2>
+            <h2 style="color:#00ff99;">✅ ส่งสลิปเรียบร้อย</h2>
             <p>ระบบได้รับข้อมูลแล้ว</p>
             <p>กรุณารอแอดมินตรวจสอบ</p>
         </div>
