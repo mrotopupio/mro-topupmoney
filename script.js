@@ -14,7 +14,7 @@ function generateQR(){
     }
 
     // 🔥 ใส่เบอร์ PromptPay ของคุณ
-    let phone = "0812345678";
+    let phone = "1509901258972";
 
     // 🔥 ชื่อบัญชีจริง
     let accountName = "นาย ยรรยง รัตนจุฑาภรณ์";
