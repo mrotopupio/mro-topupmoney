@@ -9,26 +9,31 @@ function generateQR(){
     }
 
     if(!username){
-        alert("นาย ยรรยง รัตนจุฑาภรณ์");
+        alert("กรอกชื่อผู้ใช้ก่อน");
         return;
     }
 
-    // เปลี่ยนเบอร์ตรงนี้เป็นของคุณ
-    let phone = "1509901258972";
+    // 🔥 ใส่เบอร์ PromptPay ของคุณ
+    let phone = "0812345678";
+
+    // 🔥 ชื่อบัญชีจริง
+    let accountName = "นาย ยรรยง รัตนจุฑาภรณ์";
 
     let qrUrl = `https://promptpay.io/${phone}/${amount}.png`;
 
- document.getElementById('qrBox').innerHTML = `
-    <div class="qr-card">
+    document.getElementById('qrBox').innerHTML = `
+        <div class="qr-card">
 
-        <img src="${qrUrl}" class="qr-img">
+            <img src="${qrUrl}" class="qr-img">
 
-        <p class="pay-text">📱 สแกนเพื่อจ่าย ${amount} บาท</p>
-        <p class="user-text">👤 Username: ${username}</p>
+            <p class="pay-text">📱 สแกนเพื่อจ่าย ${amount} บาท</p>
+            <p class="user-text">👤 Username: ${username}</p>
+            <p class="bank-text">🏦 บัญชี: ${accountName}</p>
 
-        <div class="alert-box">
-            ⚠️ กรุณาโอนตามจำนวน ${amount} บาท และอัปสลิปให้ตรง Username นี้
+            <div class="alert-box">
+                ⚠️ กรุณาโอน ${amount} บาท และตรวจสอบชื่อบัญชี "${accountName}"
+            </div>
+
         </div>
-
-    </div>
-`;
+    `;
+}
