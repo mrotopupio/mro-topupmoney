@@ -1,80 +1,105 @@
 body {
     margin: 0;
     font-family: Arial;
-}
-
-/* 🔥 พื้นหลังหลัก */
-.hero {
-    height: 100vh;
-    background: url("bg.jpg") center/cover no-repeat;
-    position: relative;
-}
-
-/* overlay มืด */
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        rgba(0,0,0,0.7),
-        rgba(0,0,0,0.9)
-    );
-}
-
-/* content */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
+    background: linear-gradient(135deg, #0f1115, #1a1f2e);
     color: white;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
-/* โลโก้ */
-.logo {
-    width: 180px;
-    margin-bottom: 10px;
+/* กล่องหลัก */
+.topup-box {
+    width: 320px;
+    margin: 80px auto;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(26,31,46,0.95);
+    box-shadow: 0 0 40px rgba(0,0,0,0.8);
+    text-align: center;
 }
 
-/* หัว */
-.hero-content h1 {
-    font-size: 48px;
+/* หัวข้อ */
+.topup-box h1 {
     color: #ffcc00;
-    text-shadow: 0 0 20px rgba(255,204,0,0.7);
+    margin-bottom: 5px;
 }
 
-/* ข้อความ */
-.hero-content p {
-    font-size: 18px;
-    color: #ccc;
-    margin-bottom: 25px;
+.sub {
+    font-size: 13px;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+/* input */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    background: #111520;
+    color: white;
+    outline: none;
 }
 
 /* ปุ่ม */
-.btn-start {
-    padding: 15px 30px;
-    background: linear-gradient(90deg, #ffcc00, #ffaa00);
-    color: black;
-    text-decoration: none;
-    border-radius: 12px;
-    font-size: 18px;
-    transition: 0.3s;
-    box-shadow: 0 0 20px rgba(255,204,0,0.5);
-}
-
-.btn-start:hover {
-    transform: scale(1.1);
-}body {
-    background: url("bg.jpg") center/cover no-repeat;
-}
-
-/* overlay topup */
-body::before {
-    content: "";
-    position: fixed;
+.btn-main {
     width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
-    z-index: -1;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #28a745, #00c851);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    transform: scale(1.05);
+}
+
+/* QR CARD */
+.qr-card {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    background: #111520;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    animation: fadeIn 0.5s ease;
+}
+
+.qr-img {
+    width: 200px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.pay-text {
+    margin-top: 10px;
+}
+
+.user-text {
+    color: #aaa;
+}
+
+.bank-text {
+    color: #ffcc00;
+}
+
+/* alert */
+.alert-box {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255,165,0,0.1);
+    border: 1px solid orange;
+    color: orange;
+    font-size: 13px;
+}
+
+/* animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}
 }
