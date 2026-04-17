@@ -13,23 +13,14 @@ function generateQR(){
         return;
     }
 
-    // ✅ ใช้เบอร์โทร (แนะนำ)
     let phone = "1509901258972";
 
-    // ✅ ชื่อบัญชีจริง
+
     let accountName = "นาย ยรรยง รัตนจุฑาภรณ์";
 
     let qrUrl = `https://promptpay.io/${phone}/${amount}.png`;
 
-    document.getElementById('qrBox').innerHTML = `
-        <img src="${qrUrl}" width="220">
-
-        <p>📱 สแกนเพื่อจ่าย ${amount} บาท</p>
-        <p>👤 Username: ${username}</p>
-
-        <p>🏦 บัญชี: ${accountName}</p>
-
-        <p style="color:orange; font-weight:bold;">
+      <p style="color:orange; font-weight:bold;">
         ⚠️ กรุณาโอนตามจำนวน ${amount} บาท และตรวจสอบชื่อบัญชี "${accountName}"
         </p>
     `;
