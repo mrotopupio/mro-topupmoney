@@ -1,27 +1,26 @@
-function generateQR(){
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>เติมเงิน</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
-    let amount = document.getElementById('amount').value;
-    let username = document.getElementById('username').value;
+<body>
 
-    if(!amount){
-        alert("กรอกจำนวนเงินก่อน");
-        return;
-    }
+<div class="container">
 
-    if(!username){
-        alert("กรอกชื่อผู้ใช้ก่อน");
-        return;
-    }
+    <h2>💰 เติมเงิน</h2>
 
-    let phone = "1509901258972";
+    <input type="text" id="username" placeholder="Username">
+    <input type="number" id="amount" placeholder="จำนวนเงิน">
 
+    <button onclick="generateQR()">สร้าง QR</button>
 
-    let accountName = "นาย ยรรยง รัตนจุฑาภรณ์";
+    <div id="qrBox"></div>
 
-    let qrUrl = `https://promptpay.io/${phone}/${amount}.png`;
+</div>
 
-      <p style="color:orange; font-weight:bold;">
-        ⚠️ กรุณาโอนตามจำนวน ${amount} บาท และตรวจสอบชื่อบัญชี "${accountName}"
-        </p>
-    `;
-}
+<script src="script.js"></script>
+</body>
+</html>
