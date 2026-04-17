@@ -2,27 +2,18 @@ function generateQR(){
 
     let amount = document.getElementById('amount').value;
 
-    document.getElementById('qrBox').innerHTML =
-        `<img src="https://yourdomain.com/api/generateQR.php?amount=${amount}" width="200">`;
-}
+    if(!amount){
+        alert("กรอกจำนวนเงินก่อน");
+        return;
+    }
 
-function uploadSlip(){
+    // เปลี่ยนเบอร์ตรงนี้เป็นของคุณ
+    let phone = "0649714742";
 
-    let file = document.getElementById('slip').files[0];
-    let username = document.getElementById('username').value;
-    let amount = document.getElementById('amount').value;
+    let qrUrl = `https://promptpay.io/${phone}/${amount}.png`;
 
-    let formData = new FormData();
-    formData.append("slip", file);
-    formData.append("username", username);
-    formData.append("amount", amount);
-
-    fetch('https://yourdomain.com/api/uploadSlip.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(res => res.text())
-    .then(data => {
-        document.getElementById('status').innerText = data;
-    });
+    document.getElementById('qrBox').innerHTML = `
+        <img src="${qrUrl}" width="220">
+        <p>📱 สแกนเพื่อจ่าย ${amount} บาท</p>
+    `;
 }
