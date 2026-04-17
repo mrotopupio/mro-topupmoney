@@ -113,4 +113,41 @@ button {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
+}body {
+    background: url("bg.jpg") center center / cover no-repeat fixed;
+}
+
+/* overlay */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: -1;
+}
+
+.topup-box {
+    width: 340px;
+    margin: 80px auto;
+    background: rgba(20,20,30,0.9);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.sub {
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.btn-main {
+    padding: 12px 20px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg,#00c6ff,#0072ff);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
 }
