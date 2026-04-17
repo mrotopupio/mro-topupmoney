@@ -6,10 +6,12 @@ body {
     text-align: center;
 }
 
+/* container */
 .container {
     margin-top: 50px;
 }
 
+/* input */
 input {
     display: block;
     margin: 10px auto;
@@ -19,6 +21,7 @@ input {
     border: none;
 }
 
+/* button */
 button {
     padding: 10px 20px;
     background: #28a745;
@@ -62,7 +65,7 @@ button {
     font-size: 14px;
 }
 
-/* 🔥 กล่องแจ้งเตือน */
+/* 🔥 alert */
 .alert-box {
     margin-top: 15px;
     background: rgba(255, 165, 0, 0.1);
@@ -70,13 +73,17 @@ button {
     padding: 10px;
     border-radius: 10px;
     color: orange;
-    font-size: 13px;.amount-text {
+    font-size: 13px;
+}
+
+/* 🔥 amount */
+.amount-text {
     color: #00ffcc;
     font-size: 20px;
     margin-top: 10px;
 }
 
-/* ปุ่ม copy */
+/* 🔥 copy button */
 .copy-btn {
     margin-top: 10px;
     padding: 10px;
@@ -91,12 +98,18 @@ button {
 
 .copy-btn:hover {
     transform: scale(1.05);
-}.logo {
-    width: 140px; /* ลดขนาด */
+}
+
+/* 🔥 logo */
+.logo {
+    width: 140px;
     margin-bottom: 15px;
     filter: drop-shadow(0 0 20px rgba(255,255,255,0.3));
     animation: float 3s ease-in-out infinite;
-}.title {
+}
+
+/* 🔥 title */
+.title {
     font-size: 42px;
     color: #ffcc00;
     text-shadow: 0 0 25px rgba(255,204,0,0.8);
@@ -107,7 +120,10 @@ button {
     color: #ccc;
     font-size: 15px;
     margin-bottom: 25px;
-}.btn-start {
+}
+
+/* 🔥 button main */
+.btn-start {
     padding: 15px 35px;
     font-size: 18px;
     border-radius: 12px;
@@ -121,11 +137,17 @@ button {
 .btn-start:hover {
     transform: scale(1.1);
     box-shadow: 0 0 40px rgba(255,204,0,1);
-}@keyframes float {
+}
+
+/* 🔥 animation */
+@keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
-}.overlay {
+}
+
+/* 🔥 overlay */
+.overlay {
     background: radial-gradient(circle at center,
         rgba(0,0,0,0.4),
         rgba(0,0,0,0.9)
