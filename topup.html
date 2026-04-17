@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>เติมเงิน</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h2>💰 เติมเงิน</h2>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="number" id="amount" placeholder="จำนวนเงิน">
+
+    <button onclick="generateQR()">สร้าง QR</button>
+
+    <div id="qrBox"></div>
+
+    <h3>📤 อัปโหลดสลิป</h3>
+    <input type="file" id="slip">
+
+    <button onclick="uploadSlip()">ยืนยันการชำระเงิน</button>
+
+    <p id="status"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
