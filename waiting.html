@@ -1,81 +1,16 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-<meta charset="UTF-8">
-<title>กำลังตรวจสอบ</title>
+$new = [
+    "id" => time(),
+    "username" => $username,
+    "amount" => $amount,
+    "slip" => $path,
+    "status" => "pending"
+];
 
-<style>
-body {
-    background: #0f1115;
-    color: white;
-    text-align: center;
-    font-family: Arial;
-}
+$data[] = $new;
 
-.box {
-    margin-top: 100px;
-}
+file_put_contents("data.json", json_encode($data, JSON_PRETTY_PRINT));
 
-.loader {
-    border: 5px solid #222;
-    border-top: 5px solid #00ffcc;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    margin: 20px auto;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    100% { transform: rotate(360deg); }
-}
-
-.success {
-    color: #00ff99;
-}
-
-.pending {
-    color: orange;
-}
-</style>
-
-</head>
-<body>
-
-<div class="box">
-    <h2 id="statusText">⏳ กำลังตรวจสอบ...</h2>
-    <div class="loader"></div>
-</div>
-
-<script>
-const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get("id");
-
-function checkStatus(){
-    fetch("https://mro-topupmoney.rf.gd/data.json")
-    .then(res => res.json())
-    .then(data => {
-
-        let item = data.find(x => x.id == id);
-
-        if(!item) return;
-
-        if(item.status === "success"){
-            document.getElementById("statusText").innerHTML = "✅ เติมเงินสำเร็จ!";
-            document.querySelector(".loader").style.display = "none";
-        }
-
-        if(item.status === "rejected"){
-            document.getElementById("statusText").innerHTML = "❌ ถูกปฏิเสธ";
-            document.querySelector(".loader").style.display = "none";
-        }
-
-    });
-}
-
-// 🔥 เช็คทุก 3 วิ
-setInterval(checkStatus, 3000);
-</script>
-
-</body>
-</html>
+echo "<script>
+alert('✅ อัปโหลดสำเร็จ');
+window.location.href='https://mrotopupio.github.io/mro-topupmoney/waiting.html?id=".$new["id"]."';
+</script>";
