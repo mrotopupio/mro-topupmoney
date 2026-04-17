@@ -8,7 +8,7 @@ function generateQR(){
     }
 
     // เปลี่ยนเบอร์ตรงนี้เป็นของคุณ
-    let phone = "0949537246";
+    let phone = "1509901258972";
 
     let qrUrl = `https://promptpay.io/${phone}/${amount}.png`;
 
