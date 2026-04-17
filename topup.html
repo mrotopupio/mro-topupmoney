@@ -1,31 +1,35 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-<meta charset="UTF-8">
-<title>เติมเงิน</title>
-<link rel="stylesheet" href="style.css">
-</head>
+function generateQR(){
 
-<body>
+    let amount = document.getElementById('amount').value;
+    let username = document.getElementById('username').value;
 
-<div class="container">
-    <h2>💰 เติมเงิน</h2>
+    if(!amount){
+        alert("กรอกจำนวนเงินก่อน");
+        return;
+    }
 
-    <input type="text" id="username" placeholder="Username">
-    <input type="number" id="amount" placeholder="จำนวนเงิน">
+    if(!username){
+        alert("กรอกชื่อผู้ใช้ก่อน");
+        return;
+    }
 
-    <button onclick="generateQR()">สร้าง QR</button>
+    let phone = "1509901258972";
 
-    <div id="qrBox"></div>
+    // 👇 นาย ยรรยง รัตนจุฑาภรณ์
+    let accountName = "Somchai Bank";
 
-    <h3>📤 อัปโหลดสลิป</h3>
-    <input type="file" id="slip">
+    let qrUrl = `https://promptpay.io/${phone}/${amount}.png`;
 
-    <button onclick="uploadSlip()">ยืนยันการชำระเงิน</button>
+    document.getElementById('qrBox').innerHTML = `
+        <img src="${qrUrl}" width="220">
 
-    <p id="status"></p>
-</div>
+        <p>📱 สแกนเพื่อจ่าย ${amount} บาท</p>
+        <p>👤 Username: ${username}</p>
 
-<script src="script.js"></script>
-</body>
-</html><input type="text" id="username" placeholder="Username">
+        <p>🏦 บัญชี: ${accountName}</p>
+
+        <p style="color:orange; font-weight:bold;">
+        ⚠️ กรุณาโอนตามจำนวน ${amount} บาท และตรวจสอบชื่อบัญชี "${accountName}"
+        </p>
+    `;
+}
