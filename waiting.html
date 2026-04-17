@@ -1,16 +1,23 @@
-$new = [
-    "id" => time(),
-    "username" => $username,
-    "amount" => $amount,
-    "slip" => $path,
-    "status" => "pending"
-];
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get("id");
 
-$data[] = $new;
+function checkStatus(){
+    fetch("data.json")
+    .then(res => res.json())
+    .then(data => {
+        let item = data.find(x => x.id == id);
+        if(!item) return;
 
-file_put_contents("data.json", json_encode($data, JSON_PRETTY_PRINT));
+        if(item.status === "success"){
+            document.getElementById("statusText").innerHTML = "✅ เติมเงินสำเร็จ!";
+        }
 
-echo "<script>
-alert('✅ อัปโหลดสำเร็จ');
-window.location.href='https://mrotopupio.github.io/mro-topupmoney/waiting.html?id=".$new["id"]."';
-</script>";
+        if(item.status === "rejected"){
+            document.getElementById("statusText").innerHTML = "❌ ถูกปฏิเสธ";
+        }
+    });
+}
+
+setInterval(checkStatus, 3000);
+</script>
