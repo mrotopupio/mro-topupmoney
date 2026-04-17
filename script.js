@@ -1,9 +1,15 @@
 function generateQR(){
 
     let amount = document.getElementById('amount').value;
+    let username = document.getElementById('username').value;
 
     if(!amount){
         alert("กรอกจำนวนเงินก่อน");
+        return;
+    }
+
+    if(!username){
+        alert("นาย ยรรยง รัตนจุฑาภรณ์");
         return;
     }
 
@@ -15,5 +21,6 @@ function generateQR(){
     document.getElementById('qrBox').innerHTML = `
         <img src="${qrUrl}" width="220">
         <p>📱 สแกนเพื่อจ่าย ${amount} บาท</p>
+        <p>👤 Username: ${username}</p>
     `;
 }
