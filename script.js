@@ -19,6 +19,18 @@ function generateQR() {
 
     document.getElementById('qrBox').innerHTML = `
         <div class="qr-card">
+        
+        <form action="https://mro-topupmoney.rf.gd/upload.php" method="POST" enctype="multipart/form-data">
+
+    <input type="text" name="username" id="formUsername" placeholder="👤 Username" required>
+
+    <input type="number" name="amount" id="formAmount" placeholder="💰 จำนวนเงิน" required>
+
+    <input type="file" name="slip" accept="image/*" required>
+
+    <button type="submit">📤 อัปโหลดสลิป</button>
+
+</form>
 
             <img src="${qrUrl}" class="qr-img">
 
