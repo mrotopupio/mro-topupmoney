@@ -6,17 +6,12 @@
 <title>MRO FREYA</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
     font-family:Arial,sans-serif;
     background:url("bg.jpg") center/cover no-repeat fixed;
     min-height:100vh;
-    overflow:hidden;
 }
 
 .overlay{
@@ -27,148 +22,56 @@ body{
     justify-content:center;
     align-items:center;
     position:relative;
-    padding:20px;
-}
-
-/* แสงพื้นหลัง */
-.overlay::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:radial-gradient(circle,rgba(255,215,0,.15),transparent 65%);
-    animation:pulse 3s infinite;
-}
-
-/* ดาววิบวับ */
-.sparkle{
-    position:absolute;
-    width:6px;
-    height:6px;
-    background:#ffd700;
-    border-radius:50%;
-    animation:twinkle 3s infinite;
 }
 
 .box{
-    position:relative;
-    z-index:2;
     text-align:center;
-    width:100%;
-    max-width:520px;
+    max-width:500px;
     padding:30px;
-    border-radius:25px;
-    background:rgba(20,20,20,.55);
-    backdrop-filter:blur(8px);
-    box-shadow:0 0 35px rgba(255,215,0,.35);
-    animation:fadeIn 1s ease;
+    border-radius:20px;
+    background:rgba(20,20,20,.6);
+    box-shadow:0 0 30px rgba(255,215,0,.4);
 }
 
-/* โลโก้แก้แล้ว */
 .logo{
-    width:180px;
-    height:180px;
+    width:170px;
+    height:170px;
     object-fit:contain;
-    padding:10px;
-    background:rgba(255,255,255,.04);
-    border-radius:25px;
-    box-shadow:0 0 35px gold;
-    animation:float 2.5s ease-in-out infinite;
     margin-bottom:20px;
 }
 
 .title{
-    font-size:52px;
-    font-weight:bold;
+    font-size:46px;
     color:#ffd700;
-    text-shadow:0 0 20px gold;
     margin-bottom:10px;
 }
 
 .sub{
     color:#fff;
-    font-size:18px;
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
 .btn{
     display:inline-block;
-    padding:20px 60px;
-    font-size:30px;
+    padding:18px 50px;
+    font-size:26px;
     font-weight:bold;
     color:#111;
     text-decoration:none;
-    border-radius:18px;
+    border-radius:15px;
     background:linear-gradient(90deg,#ffd700,#ff9900);
-    box-shadow:0 0 30px rgba(255,215,0,.9);
-    transition:.2s;
-    animation:glow 1.5s infinite alternate;
-}
-
-.btn:hover{
-    transform:scale(1.08);
 }
 
 .footer{
-    margin-top:25px;
+    margin-top:20px;
     color:#ccc;
-    font-size:14px;
-}
-
-/* เอฟเฟกต์ */
-@keyframes fadeIn{
-    from{opacity:0;transform:translateY(20px);}
-    to{opacity:1;transform:translateY(0);}
-}
-
-@keyframes float{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-}
-
-@keyframes glow{
-    from{box-shadow:0 0 20px rgba(255,215,0,.7);}
-    to{box-shadow:0 0 45px rgba(255,215,0,1);}
-}
-
-@keyframes pulse{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.08);}
-    100%{transform:scale(1);}
-}
-
-@keyframes twinkle{
-    0%{transform:translateY(0);opacity:.2;}
-    50%{opacity:1;}
-    100%{transform:translateY(-120px);opacity:0;}
-}
-
-@media(max-width:600px){
-    .logo{
-        width:150px;
-        height:150px;
-    }
-
-    .title{
-        font-size:40px;
-    }
-
-    .btn{
-        font-size:24px;
-        padding:16px 40px;
-    }
+    font-size:13px;
 }
 </style>
 </head>
 
 <body>
-
 <div class="overlay">
-
-    <div class="sparkle" style="left:10%;bottom:10%;animation-delay:0s;"></div>
-    <div class="sparkle" style="left:25%;bottom:15%;animation-delay:1s;"></div>
-    <div class="sparkle" style="left:70%;bottom:10%;animation-delay:2s;"></div>
-    <div class="sparkle" style="left:85%;bottom:20%;animation-delay:.5s;"></div>
-
     <div class="box">
 
         <img src="logo.png" class="logo">
@@ -179,36 +82,14 @@ body{
             ระบบเติมเงินอัตโนมัติ รวดเร็ว ปลอดภัย 24 ชั่วโมง
         </div>
 
-        <a href="topup.html" class="btn" onclick="playSound(event)">💰 เติมเงินเลย</a>
+        <!-- ✅ แก้ตรงนี้ -->
+        <a href="topup.html" class="btn">💰 เติมเงินเลย</a>
 
         <div class="footer">
-            © 2026 MRO FREYA TOPUP SYSTEM
+            © 2026 MRO FREYA
         </div>
 
     </div>
 </div>
-
-<script>
-function playSound(e){
-    e.preventDefault();
-
-    let ctx = new (window.AudioContext || window.webkitAudioContext)();
-    let osc = ctx.createOscillator();
-    let gain = ctx.createGain();
-
-    osc.type = "sine";
-    osc.frequency.value = 700;
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-    osc.start();
-
-    gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.2);
-
-    setTimeout(()=>{
-        window.location.href="topup.html";
-    },220);
-}
-</script>
-
 </body>
 </html>
