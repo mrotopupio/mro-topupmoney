@@ -3,93 +3,190 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>MRO FREYA</title>
+<title>MRO FREYA CASINO</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
     font-family:Arial,sans-serif;
     background:url("bg.jpg") center/cover no-repeat fixed;
     min-height:100vh;
+    overflow:hidden;
 }
 
+/* พื้นมืดหรู */
 .overlay{
     width:100%;
     min-height:100vh;
-    background:rgba(0,0,0,.78);
+    background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.88));
     display:flex;
     justify-content:center;
     align-items:center;
     position:relative;
 }
 
+/* แสงหมุน */
+.ring{
+    position:absolute;
+    width:650px;
+    height:650px;
+    border:2px solid rgba(255,215,0,.08);
+    border-radius:50%;
+    animation:spin 20s linear infinite;
+}
+
+/* ดาววิบวับ */
+.sparkle{
+    position:absolute;
+    width:7px;
+    height:7px;
+    background:gold;
+    border-radius:50%;
+    box-shadow:0 0 12px gold;
+    animation:twinkle 4s infinite;
+}
+
+/* กล่องหลัก */
 .box{
+    position:relative;
+    z-index:5;
+    width:92%;
+    max-width:560px;
     text-align:center;
-    max-width:500px;
-    padding:30px;
-    border-radius:20px;
-    background:rgba(20,20,20,.6);
-    box-shadow:0 0 30px rgba(255,215,0,.4);
+    padding:35px;
+    border-radius:28px;
+    background:rgba(20,20,20,.55);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,215,0,.18);
+    box-shadow:0 0 40px rgba(255,215,0,.28);
+    animation:fadeUp 1s ease;
 }
 
+/* โลโก้ */
 .logo{
-    width:170px;
-    height:170px;
+    width:190px;
+    height:190px;
     object-fit:contain;
-    margin-bottom:20px;
+    padding:10px;
+    border-radius:30px;
+    background:rgba(255,255,255,.03);
+    box-shadow:0 0 35px gold;
+    animation:float 3s ease-in-out infinite;
+    margin-bottom:18px;
 }
 
+/* ข้อความ */
 .title{
-    font-size:46px;
+    font-size:56px;
+    font-weight:bold;
     color:#ffd700;
-    margin-bottom:10px;
+    text-shadow:0 0 18px gold;
+    letter-spacing:2px;
 }
 
 .sub{
     color:#fff;
-    margin-bottom:25px;
+    margin-top:10px;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:28px;
 }
 
+/* ปุ่ม */
 .btn{
     display:inline-block;
-    padding:18px 50px;
-    font-size:26px;
+    padding:18px 55px;
+    font-size:28px;
     font-weight:bold;
     color:#111;
     text-decoration:none;
-    border-radius:15px;
-    background:linear-gradient(90deg,#ffd700,#ff9900);
+    border-radius:16px;
+    background:linear-gradient(90deg,#ffd700,#ffb300,#ff8c00);
+    box-shadow:0 0 25px rgba(255,215,0,.9);
+    animation:glow 1.5s infinite alternate;
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
 }
 
 .footer{
-    margin-top:20px;
+    margin-top:24px;
     color:#ccc;
     font-size:13px;
+}
+
+/* Animation */
+@keyframes glow{
+    from{box-shadow:0 0 18px rgba(255,215,0,.5);}
+    to{box-shadow:0 0 42px rgba(255,215,0,1);}
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+}
+
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+@keyframes twinkle{
+    0%{transform:translateY(0) scale(1);opacity:.1;}
+    50%{opacity:1;}
+    100%{transform:translateY(-120px) scale(1.8);opacity:0;}
+}
+
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(25px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+@media(max-width:600px){
+    .title{font-size:42px;}
+    .logo{width:150px;height:150px;}
+    .btn{font-size:23px;padding:15px 38px;}
 }
 </style>
 </head>
 
 <body>
-<div class="overlay">
-    <div class="box">
 
+<div class="overlay">
+
+    <div class="ring"></div>
+
+    <div class="sparkle" style="left:8%;bottom:8%;animation-delay:0s;"></div>
+    <div class="sparkle" style="left:22%;bottom:15%;animation-delay:1s;"></div>
+    <div class="sparkle" style="left:74%;bottom:12%;animation-delay:2s;"></div>
+    <div class="sparkle" style="left:90%;bottom:18%;animation-delay:.5s;"></div>
+    <div class="sparkle" style="left:50%;bottom:5%;animation-delay:1.5s;"></div>
+
+    <div class="box">
         <img src="logo.png" class="logo">
 
         <div class="title">MRO FREYA</div>
 
         <div class="sub">
-            ระบบเติมเงินอัตโนมัติ รวดเร็ว ปลอดภัย 24 ชั่วโมง
+            ระบบเติมเงินอัตโนมัติสุดหรู<br>
+            รวดเร็ว ปลอดภัย ตลอด 24 ชั่วโมง
         </div>
 
-        <!-- ✅ แก้ตรงนี้ -->
         <a href="topup.html" class="btn">💰 เติมเงินเลย</a>
 
         <div class="footer">
-            © 2026 MRO FREYA
+            © 2026 MRO FREYA TOPUP SYSTEM
         </div>
-
     </div>
+
 </div>
+
 </body>
 </html>
