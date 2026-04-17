@@ -1,71 +1,43 @@
 body {
     margin: 0;
     font-family: Arial;
-    background: linear-gradient(135deg, #0f1115, #1a1f2e);
+    background: #0f1115;
     color: white;
-}
-
-/* กล่องหลัก */
-.topup-box {
-    width: 320px;
-    margin: 80px auto;
-    padding: 30px;
-    border-radius: 20px;
-    background: rgba(26,31,46,0.95);
-    box-shadow: 0 0 40px rgba(0,0,0,0.8);
     text-align: center;
 }
 
-/* หัวข้อ */
-.topup-box h1 {
-    color: #ffcc00;
-    margin-bottom: 5px;
+.container {
+    margin-top: 50px;
 }
 
-.sub {
-    font-size: 13px;
-    color: #aaa;
-    margin-bottom: 20px;
-}
-
-/* input */
 input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 10px;
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 250px;
+    border-radius: 6px;
     border: none;
-    background: #111520;
-    color: white;
-    outline: none;
 }
 
-/* ปุ่ม */
-.btn-main {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
+button {
+    padding: 10px 20px;
+    background: #28a745;
     border: none;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #28a745, #00c851);
     color: white;
-    font-size: 16px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-.btn-main:hover {
-    transform: scale(1.05);
-}
-
-/* QR CARD */
+/* 🔥 QR CARD */
 .qr-card {
-    margin-top: 20px;
+    background: #1a1f2e;
     padding: 20px;
+    margin-top: 20px;
     border-radius: 15px;
-    background: #111520;
+    width: 260px;
+    margin-left: auto;
+    margin-right: auto;
     box-shadow: 0 0 20px rgba(0,0,0,0.6);
-    animation: fadeIn 0.5s ease;
 }
 
 .qr-img {
@@ -77,29 +49,26 @@ input {
 
 .pay-text {
     margin-top: 10px;
+    font-size: 16px;
 }
 
 .user-text {
-    color: #aaa;
+    color: #ccc;
+    font-size: 14px;
 }
 
 .bank-text {
     color: #ffcc00;
+    font-size: 14px;
 }
 
-/* alert */
+/* 🔥 กล่องแจ้งเตือน */
 .alert-box {
     margin-top: 15px;
+    background: rgba(255, 165, 0, 0.1);
+    border: 1px solid orange;
     padding: 10px;
     border-radius: 10px;
-    background: rgba(255,165,0,0.1);
-    border: 1px solid orange;
     color: orange;
     font-size: 13px;
-}
-
-/* animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px);}
-    to { opacity: 1; transform: translateY(0);}
 }
