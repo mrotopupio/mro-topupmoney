@@ -2,32 +2,130 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>MRO FREYA</title>
-<link rel="stylesheet" href="style.css?v=10">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:url("bg.jpg") center/cover no-repeat fixed;
+    min-height:100vh;
+}
+
+.overlay{
+    width:100%;
+    min-height:100vh;
+    background:rgba(0,0,0,0.78);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.box{
+    text-align:center;
+    max-width:500px;
+    width:100%;
+    animation:fadeIn 1s ease;
+}
+
+.logo{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:25px;
+    box-shadow:0 0 40px rgba(255,215,0,.9);
+    margin-bottom:20px;
+}
+
+.title{
+    font-size:48px;
+    font-weight:bold;
+    color:#ffd700;
+    text-shadow:0 0 20px #ffd700;
+    margin-bottom:10px;
+}
+
+.sub{
+    font-size:18px;
+    color:#fff;
+    opacity:.9;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:18px 55px;
+    font-size:28px;
+    font-weight:bold;
+    color:#111;
+    text-decoration:none;
+    border-radius:18px;
+    background:linear-gradient(90deg,#ffd700,#ff9900);
+    box-shadow:0 0 30px rgba(255,200,0,.9);
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 40px rgba(255,200,0,1);
+}
+
+.footer{
+    margin-top:30px;
+    color:#aaa;
+    font-size:14px;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+@media(max-width:600px){
+    .logo{
+        width:150px;
+        height:150px;
+    }
+
+    .title{
+        font-size:38px;
+    }
+
+    .btn{
+        font-size:24px;
+        padding:16px 40px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<div class="hero">
+<div class="overlay">
+    <div class="box">
 
-    <div class="overlay"></div>
-
-    <div class="particles"></div>
-
-    <div class="hero-content">
         <img src="logo.png" class="logo">
 
-        <h1 class="title">MRO FREYA</h1>
+        <div class="title">MRO FREYA</div>
 
-        <p class="subtitle">
+        <div class="sub">
             ระบบเติมเงินอัตโนมัติ รวดเร็ว ปลอดภัย 24 ชั่วโมง
-        </p>
+        </div>
 
-        <a href="topup.html" class="btn-start">
-            💰 เติมเงินเลย
-        </a>
+        <a href="topup.html" class="btn">💰 เติมเงินเลย</a>
+
+        <div class="footer">
+            © 2026 MRO FREYA TOPUP SYSTEM
+        </div>
+
     </div>
-
 </div>
 
 </body>
