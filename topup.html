@@ -8,19 +8,25 @@
 
 <body>
 
-<div class="container">
+<div class="topup-box">
 
-    <h2>💰 เติมเงิน</h2>
+    <h1>💰 เติมเงิน</h1>
+    <p class="sub">ระบบเติมเงินอัตโนมัติ ปลอดภัย 24 ชม.</p>
 
-    <input type="text" id="username" placeholder="Username">
-    <input type="number" id="amount" placeholder="จำนวนเงิน">
+    <input type="text" id="username" placeholder="👤 Username">
+    <input type="number" id="amount" placeholder="💸 จำนวนเงิน">
 
-    <button onclick="generateQR()">สร้าง QR</button>
+    <button onclick="generateQR()" class="btn-main">
+        ⚡ สร้าง QR
+    </button>
 
     <div id="qrBox"></div>
 
 </div>
 
+<script src="script.js"></script>
+</body>
+</html>
 <script src="script.js"></script>
 </body>
 </html>
