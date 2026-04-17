@@ -4,14 +4,14 @@ body {
     overflow: hidden;
 }
 
-/* 🔥 background */
+/* ===== HERO ===== */
 .hero {
     height: 100vh;
     background: url("bg.jpg") center/cover no-repeat;
     position: relative;
 }
 
-/* 🔥 overlay cinematic */
+/* overlay */
 .overlay {
     position: absolute;
     width: 100%;
@@ -22,7 +22,7 @@ body {
     );
 }
 
-/* 🔥 particles */
+/* particles */
 .particles {
     position: absolute;
     width: 100%;
@@ -37,7 +37,7 @@ body {
     to { background-position: 1000px 1000px; }
 }
 
-/* 🔥 content */
+/* content */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -47,14 +47,14 @@ body {
     transform: translateY(-50%);
 }
 
-/* 🔥 logo */
+/* logo */
 .logo {
     width: 140px;
     filter: drop-shadow(0 0 25px rgba(255,255,255,0.5));
     animation: float 3s ease-in-out infinite;
 }
 
-/* 🔥 title */
+/* title */
 .title {
     font-size: 50px;
     color: #ffcc00;
@@ -62,13 +62,13 @@ body {
     margin-top: 10px;
 }
 
-/* 🔥 subtitle */
+/* subtitle */
 .subtitle {
     color: #ccc;
     margin-bottom: 30px;
 }
 
-/* 🔥 button */
+/* button */
 .btn-start {
     padding: 15px 40px;
     font-size: 18px;
@@ -80,7 +80,7 @@ body {
     overflow: hidden;
 }
 
-/* ✨ แสงวิ่ง */
+/* light effect */
 .btn-start::before {
     content: "";
     position: absolute;
@@ -96,24 +96,20 @@ body {
     left: 100%;
 }
 
-/* hover */
 .btn-start:hover {
     transform: scale(1.1);
 }
 
-/* 🔥 animation */
+/* float animation */
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-12px); }
     100% { transform: translateY(0px); }
 }
-/* 🔥 overlay */
-.overlay {
-    background: radial-gradient(circle at center,
-        rgba(0,0,0,0.4),
-        rgba(0,0,0,0.9)
-    );
-}.topup-box {
+
+/* ===== TOPUP ===== */
+
+.topup-box {
     width: 320px;
     margin: 80px auto;
     padding: 25px;
@@ -123,7 +119,6 @@ body {
     text-align: center;
 }
 
-/* glow */
 .topup-box h2 {
     color: #ffcc00;
     text-shadow: 0 0 15px rgba(255,204,0,0.8);
