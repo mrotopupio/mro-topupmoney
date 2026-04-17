@@ -13,7 +13,7 @@ function generateQR(){
         return;
     }
 
-    let phone = "0812345678"; // 🔥 เปลี่ยนเป็นของคุณ
+    let phone = "1509901258972"; // 🔥 เปลี่ยนเป็นของคุณ
     let accountName = "นาย ยรรยง รัตนจุฑาภรณ์";
 
     let qrUrl = `https://promptpay.io/${phone}/${amount}.png`;
