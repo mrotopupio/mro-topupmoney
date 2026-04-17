@@ -1,5 +1,4 @@
 function generateQR() {
-
     let amount = document.getElementById('amount').value.trim();
     let username = document.getElementById('username').value.trim();
 
@@ -13,24 +12,12 @@ function generateQR() {
         return;
     }
 
-    let phone = "0949537846";
+    let phone = "1509901258972";
     let accountName = "นาย ยรรยง รัตนจุฑาภรณ์";
     let qrUrl = `https://promptpay.io/${phone}/${amount}.png`;
 
     document.getElementById('qrBox').innerHTML = `
         <div class="qr-card">
-        
-        <form action="https://mro-topupmoney.rf.gd/upload.php" method="POST" enctype="multipart/form-data">
-
-    <input type="text" name="username" id="formUsername" placeholder="👤 Username" required>
-
-    <input type="number" name="amount" id="formAmount" placeholder="💰 จำนวนเงิน" required>
-
-    <input type="file" name="slip" accept="image/*" required>
-
-    <button type="submit">📤 อัปโหลดสลิป</button>
-
-</form>
 
             <img src="${qrUrl}" class="qr-img">
 
@@ -42,30 +29,20 @@ function generateQR() {
                 💾 บันทึก QR Code
             </a>
 
-            <input type="file" id="slipFile" accept="image/*" style="margin-top:15px;">
+            <!-- ✅ FORM จริง -->
+            <form action="https://mro-topupmoney.rf.gd/upload.php" method="POST" enctype="multipart/form-data" style="margin-top:15px;">
 
-            <button class="copy-btn" onclick="submitSlip()">
-                ✅ โอนแล้ว
-            </button>
+                <input type="hidden" name="username" value="${username}">
+                <input type="hidden" name="amount" value="${amount}">
 
-        </div>
-    `;
-}
+                <input type="file" name="slip" accept="image/*" required>
 
-function submitSlip() {
+                <button type="submit" class="copy-btn">
+                    📤 อัปโหลดสลิป
+                </button>
 
-    let file = document.getElementById("slipFile").files[0];
+            </form>
 
-    if (!file) {
-        alert("กรุณาแนบสลิปก่อน");
-        return;
-    }
-
-    document.getElementById("qrBox").innerHTML = `
-        <div class="qr-card">
-            <h2 style="color:#00ff99;">✅ ส่งสลิปเรียบร้อย</h2>
-            <p>ระบบได้รับข้อมูลแล้ว</p>
-            <p>กรุณารอแอดมินตรวจสอบ</p>
         </div>
     `;
 }
