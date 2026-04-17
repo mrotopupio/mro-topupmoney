@@ -18,12 +18,12 @@ function generateQR(){
 
     let qrUrl = `https://promptpay.io/${phone}/${amount}.png`;
 
-   document.getElementById('qrBox').innerHTML = `<p style="color:orange; font-weight:bold;">
+ document.getElementById('qrBox').innerHTML = `
     <img src="${qrUrl}" width="220">
     <p>📱 สแกนเพื่อจ่าย ${amount} บาท</p>
     <p>👤 Username: ${username}</p>
 
-    <p style="color:orange;">
+    <p style="color:orange; font-weight:bold;">
     ⚠️ กรุณาโอนตามจำนวน ${amount} บาท และอัปสลิปให้ตรง Username นี้
     </p>
 `;
