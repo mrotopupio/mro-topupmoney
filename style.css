@@ -70,5 +70,25 @@ button {
     padding: 10px;
     border-radius: 10px;
     color: orange;
-    font-size: 13px;
+    font-size: 13px;.amount-text {
+    color: #00ffcc;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* ปุ่ม copy */
+.copy-btn {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.copy-btn:hover {
+    transform: scale(1.05);
 }
